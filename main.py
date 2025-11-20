@@ -1,8 +1,7 @@
-main.py
 import discord
 from discord.ext import commands
-import os
 import random
+
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 
@@ -68,3 +67,4 @@ async def equipe(ctx, *, membros):
     )
 
 bot.run(TOKEN)
+
