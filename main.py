@@ -1,6 +1,20 @@
 import discord
 from discord.ext import commands
-import random
+import os
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+
+bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
+
+@bot.event
+async def on_ready():
+    print(f"Bot conectado como {bot.user}")
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send("Pong!")
+
+bot.run(TOKEN)
 
 
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -67,4 +81,5 @@ async def equipe(ctx, *, membros):
     )
 
 bot.run(TOKEN)
+
 
